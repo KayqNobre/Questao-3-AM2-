@@ -15,8 +15,11 @@ Alidja Dafny Alves Rodrigues(556344)
 
 ## Como iniciar a página:
 Inicialmente, tenha o node.js instalado
+
 vá para a pasta server e rode o comando "npm install express"
+
 e após isso acesse o link
+
 http://localhost:3000/index.html
 ## Preenchimento dos campos:
 Nome: A partir de 3 caracteres até um máximo de 50
