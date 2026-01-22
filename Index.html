@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>   
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandacaru Games</title>
+    
+    <style>
+        body {
+            background-color: #EBE2B9;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        /*organização dos elementos*/
+        .elements {
+            width: 196px;
+            margin:0px auto;
+        }
+
+        /*botão do apressado*/
+        .botão {
+            display: block;
+            width: 196px;
+            height: 153px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    </header>
+    <!--Logo-->
+    <div class="elements">
+        <a href="Cadastro.html">
+            <img class="botão" src="assets/Mandacaru_Logo.png" alt="Logo">
+        </a>
+    </div>
+    <!--Transição-->
+    <script>
+        let tempo = 1;
+
+        function timer() {
+            if(tempo <=0) {
+                window.location.href= "Cadastro.html";
+            }else {
+                tempo--;
+                setTimeout(timer, 500);
+            }
+        }
+        setTimeout(timer, 500);
+    </script>
+    
+</body>
+</html>

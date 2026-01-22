@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+
+    <style>
+        /*Fonte*/
+        @font-face {
+            font-family: 'Xilosa';
+            src: url('fonts/Xilosa.woff2') format('woff2'),
+                url('fonts/Xilosa.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /*Página inteira*/
+        body {
+            background-color: #EBE2B9;
+        }
+
+        .elements {
+            width: 315px;
+            margin: 0px auto;
+        }
+
+        /*retângulo preto de fundo*/
+        .rect {
+            background-color: #000000;
+            display: flex;
+            flex-wrap: wrap;
+            width: 315px;
+            border-radius: 8px;
+            border-radius: 8px;
+            padding-bottom: 15px;
+            margin-top: 10px;
+        }
+
+        .image {
+            display: flex;
+        }
+
+        /*Título*/
+        h1 {
+            font-family: "Xilosa";
+            color: #EBE2B9;
+            text-align: center;
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 22px;
+            width: 298px;
+            height: auto;
+            padding-top: 0px;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        /*Tópicos*/
+        h2 {
+            font-family: "Xilosa";
+            color: #EBE2B9;
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 0px;
+            padding-left: 9px;
+            margin-top: 19px;
+            margin-bottom: 16px;
+        }
+
+        /*texto*/
+        p {
+            font-family: "Xilosa";
+            color: #000000;
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-size: 20px;
+            font-style: normal;
+            text-align: center;
+        }
+
+        /*Texto em verde*/
+        .destaque {
+            color: #053813;
+        }
+
+        /*enviar foto*/
+        .button1 {
+            background: url('assets/Asset_Textbox.png') no-repeat;
+            margin-left: 9px;
+            width: 306px;
+            height: 45px;
+            font-family: "Xilosa";
+            color: #070707;
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 30px;
+            text-align: left;
+            padding-left: 14px;
+            border: none;
+        }
+
+        /*Enviar*/
+        .button2 {
+            font-family: "Xilosa";
+            color: #EBE2B9;
+            background-color: #053813;
+            box-shadow: 0 4px 0 0 #20413c;
+            border-radius: 19px;
+            font-family: "Xilosa";
+            text-align: center;
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 22px;
+            margin-left: 46px;
+            margin-top: 24px;
+            padding: 8px 15px;
+        }
+
+        /*Limpar*/
+        .button3 {
+            font-family: "Xilosa";
+            color: #EBE2B9;
+            background-color: #843431;
+            box-shadow: 0 4px 0 0 #592321;
+            border-radius: 19px;
+            font-family: "Xilosa";
+            text-align: center;
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 22px;
+            margin-left: 46px;
+            margin-top: 24px;
+            padding: 8px 15px;
+        }
+
+        /*inputs com placeholder*/
+        .input-containter input {
+            font-family: "Xilosa";
+            color: #000000;
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-family: Xilosa;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 30px;
+            width: 230px;
+            height: 40px;
+            padding: 0 15px;
+            margin-left: 2px;
+            background: none;
+            outline: none;
+            border: none;
+        }
+
+        /*cor do texto placeholder*/
+        input::placeholder {
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        /*caixa de texto*/
+        .container-background {
+            background-size: cover;
+            background: url('assets/Asset_Textbox.svg') no-repeat;
+            width: 298px;
+            height: 40px;
+            margin-left: 9px;
+        }
+    </style>
+</head>
+
+<body>
+    <header></header>
+
+    <div class="elements">
+        <!--Logo-->
+        <div class="image">
+            <img src="assets/Mandacaru_Logo.png" alt="logo" style="
+                width: 196px; 
+                height: 153px; 
+                margin: 0 auto 0px auto;">
+        </div>
+        <!--Caixa-->
+        <div class="rect">
+            <h1>CADASTRO<br>DE JOGADOR</h1>
+
+            <!--Nome-->
+            <div>
+                <h2>Nome</h2>
+                <div class="container-background input-containter">
+                    <input id="nome" type="text" title="Mínimo: 3 caracteres, Máximo: 50 caracteres" oninput="verNome()"
+                        placeholder="digite seu nome">
+                </div>
+            </div>
+
+            <!--E-mail-->
+            <div>
+                <h2>E-mail</h2>
+                <div class="container-background input-containter">
+                    <input id="email" type="text" title="formato 'ccc@ddd.ccc'" oninput="verEmail()"
+                        placeholder="ex. seuemail@mail.com">
+                </div>
+            </div>
+
+            <!--Senha-->
+            <div>
+                <h2>Senha</h2>
+                <div class="container-background input-containter">
+                    <input id="senha" type="text" title=" Mínimo: 10 caracteres. 
+ Obrigatório números, letras e caracteres especiais. 
+ Especiais válidos: '*' ';' '#'" oninput="verSenha()" placeholder="digite sua senha">
+                </div>
+            </div>
+
+            <!--confirmar Senha-->
+            <div>
+                <h2>Confirmar Senha</h2>
+                <div class="container-background input-containter">
+                    <input id="confirmarSenha" type="text" oninput="verConfirmarSenha()" placeholder="digite sua senha">
+                </div>
+            </div>
+
+            <!--CEP-->
+            <div>
+                <h2>CEP</h2>
+                <div class="container-background input-containter image">
+                    <input id="cep" type="text" title="Apenas números" oninput="verCep()"
+                        placeholder="buscando endereço...">
+                    <!--Imagem de Lupa-->
+                    <!--<img 
+                        src="assets/Icon_MagniGlass.svg" 
+                        alt="lupa" 
+                        style="width: 25.675px; 
+                            height: 25.455px; 
+                            padding-top: 7px; 
+                            padding-left: 2px;">-->
+                </div>
+            </div>
+
+            <!--Endereço-->
+            <div>
+                <h2>Endereço</h2>
+                <div class="container-background input-containter">
+                    <input id="endereco" type="text" title="Mínimo: 4 caracteres" oninput="verEndereco()"
+                        placeholder="rua/logradouro">
+                </div>
+            </div>
+
+            <!--Número-->
+            <!--<div>
+                <h2>Número</h2>
+                <div class="container-background input-containter">
+                    <input 
+                        id="numero" 
+                        type="text" 
+                        placeholder="número de residência">
+                </div>
+            </div>-->
+
+            <!--Estado-->
+            <div>
+                <h2>Estado</h2>
+                <div class="container-background input-containter image">
+                    <input id="estado" type="text" title="Apenas a Sigla de 2 letras Maiusculas" oninput="verEstado()"
+                        placeholder="seleione ou digite a sigla">
+                    <!--<img 
+                        src="assets/Icon_Arrow.svg" 
+                        alt="lupa" 
+                        style="width: 25.675px; 
+                            height: 25.455px; 
+                            padding-top: 7px; 
+                            padding-left: 2px;">-->
+                </div>
+            </div>
+
+            <!--Cidade-->
+            <div>
+                <h2>Cidade</h2>
+                <div class="container-background input-containter">
+                    <input id="cidade" type="text" title="Mínimo: 3 caracteres" oninput="verCidade()"
+                        placeholder="digite a sua cidade">
+                </div>
+            </div>
+
+            <!--Foto de Perfil-->
+            <!--<div>
+                <h2>Foto de Perfil</h2>
+                <div class="container-background input-containter">
+                    <p style="
+                        margin-bottom: -34px; 
+                        padding: 8px;">ENVIAR FOTO (Max 5MB)</p>
+                    <input 
+                        id="fotoPerfil" 
+                        type="file" 
+                        accept="image/*"
+                        onchange=""
+                        style=
+                            "opacity: 0; 
+                            width: 100%;">
+                </div>
+            </div>-->
+
+            <!--Enviar dados-->
+            <button id="enviar" class="button2" onclick="cadastrar()">
+                Enviar
+            </button>
+
+            <!--Limpar dados-->
+            <button id="limpar" class="button3" onclick="limpar()">
+                Limpar
+            </button>
+        </div>
+        <!--Texto abaixo da caixa-->
+        <div>
+            <p>Já possui uma conta?
+                <a href="Cadastrados.html" class="destaque">
+                    Entrar
+                </a>
+            </p>
+        </div>
+
+        <!--Texto que retorna os dados-->
+        <div>
+            <p id="resultado"> registo</p>
+        </div>
+    </div>
+
+    <script>
+        let nomeValido = null;
+        let emailValido = null;
+        let senhaValida = null;
+        let confirmarSenhaValido = null;
+        let cepValido = null;
+        let enderecoValido = null;
+        let numeroValido = null;
+        let estadoValido = null;
+        let cidadeValida = null;
+        let fotoPerfilValida = null;
+
+        //troca a cor dependendo do tamanho da string
+        function escolherCor(elemento, valido) {
+            elemento.style.color = valido === true ? "#053813" :
+                valido === false ? "#843431" :
+                    "#000000";
+        }
+
+
+        //verifica tamanho da string de nome
+        function verNome() {
+            const nome = document.getElementById('nome');
+            const texto = nome.value;
+
+            //menor tamanho de nome é 2 tipo Jó
+            if (texto.length >= 2 && texto.length <= 50) {
+                nomeValido = true;
+            } else if (texto.length > 0) {
+                nomeValido = false;
+            } else {
+                nomeValido = null;
+            }
+
+            escolherCor(nome, nomeValido);
+        }
+
+        //verifica estrutura do email
+        function verEmail() {
+            const email = document.getElementById('email');
+            const texto = email.value;
+
+            //conta quantos de cada elemento chave existem
+            const quantosArroba = texto.split("@").length - 1;
+            const quantosPonto = texto.split(".").length - 1;
+
+            //conta onde esta cada elemento chave
+            const arroba = texto.indexOf("@");
+            const ponto = texto.indexOf(".");
+
+            //regras: arroba não pode ser primeiro elemento,
+            //        só pode haver um arroba e um ponto,
+            //        arroba deve vir antes do ponto,
+            //        arroba e ponto não podem estar adjacentes,
+            //        ponto não pode ser o último elemento.
+            if (quantosArroba === 1 &&
+                ponto - arroba > 1 &&
+                arroba > 0 &&
+                ponto < texto.length - 1 &&
+                texto[texto.length - 1] != '.'
+            ) {
+                emailValido = true;
+            } else if (texto.length > 0) {
+                emailValido = false;
+            } else {
+                emailValido = null;
+            }
+
+            escolherCor(email, emailValido);
+            console.log(ponto, texto[texto.length - 1], texto.length);
+        }
+
+        //verifica elementos da senha
+        function verSenha() {
+            const senha = document.getElementById('senha');
+            const texto = senha.value;
+
+            //testes de presença de elemento
+            let letra = /[a-zA-Z]/.test(texto);
+            let numero = /\d/.test(texto);
+            let especialPermitido = /[*#;]/.test(texto);
+            let especialProibido = /[^a-zA-Z0-9*#;]/.test(texto);
+
+            if (texto.length > 9 &&
+                letra &&
+                numero &&
+                especialPermitido &&
+                !especialProibido
+            ) {
+                senhaValida = true;
+            } else if (texto.length > 0) {
+                senhaValida = false;
+            } else {
+                senhaValida = null;
+            }
+
+            escolherCor(senha, senhaValida);
+        }
+
+        //confirmação de senha
+        function verConfirmarSenha() {
+            const senha = document.getElementById('senha');
+            const confirmarSenha = document.getElementById('confirmarSenha');
+            const texto1 = senha.value;
+            const texto2 = confirmarSenha.value;
+
+            //regra: senhas iguais
+            if (texto1 === texto2) {
+                confirmarSenhaValido = true;
+            } else if (texto2.length > 0) {
+                confirmarSenhaValido = false;
+            } else {
+                confirmarSenhaValido = null;
+            }
+
+            escolherCor(confirmarSenha, confirmarSenhaValido);
+        }
+
+        //autoformata e verifica o CEP
+        function verCep() {
+            const cep = document.getElementById('cep');
+            let texto = cep.value;
+
+
+            //adiciona o hifen quando termina de escrever
+            if (texto.length === 8) {
+                if (texto[5] != '-') {
+                    cep.value = texto.substring(0, 5) + '-' + texto.substring(5, 9);
+                    texto = cep.value;
+                }
+            }
+
+            const cepNumerico = /^[\d-]+$/.test(texto);
+            const quantoshifen = texto.split("-").length - 1;
+
+            //regras:
+            //      apenas 1 hifem na sétima posição
+            //      só valores numéricos além do hifem
+            //      string com tamanho 10
+            if (cepNumerico &&
+                texto.length === 9 &&
+                quantoshifen === 1) {
+                cepValido = true;
+            } else if (texto.length > 0) {
+                cepValido = false;
+            } else {
+                cepValido = null;
+            }
+            console.log(cepNumerico, texto.length === 9, texto.length, quantoshifen === 1, quantoshifen, cep.value, texto)
+            escolherCor(cep, cepValido);
+        }
+
+        function verEndereco() {
+            const endereco = document.getElementById('endereco');
+            const texto = endereco.value;
+
+            //existem cidades com números e caracteres especiais no nome então não checa isso
+            if (texto.length > 2
+            ) {
+                enderecoValido = true;
+            } else if (texto.length > 0) {
+                enderecoValido = false;
+            } else {
+                enderecoValido = null;
+            }
+
+            escolherCor(endereco, enderecoValido);
+        }
+
+        //verifica conteudo do estado
+        function verEstado() {
+            const estado = document.getElementById('estado');
+            const texto = estado.value;
+
+            const apenasMaiusculas = /^[A-Z]+$/.test(texto);
+
+            if (apenasMaiusculas &&
+                texto.length === 2
+            ) {
+                estadoValido = true;
+            } else if (texto.length > 0) {
+                estadoValido = false;
+            } else {
+                estadoValido = null;
+            }
+
+            escolherCor(estado, estadoValido);
+        }
+
+        //verifica tamanho de cidade
+        function verCidade() {
+            const cidade = document.getElementById('cidade');
+            const texto = cidade.value;
+
+            //existem cidades com números e caracteres especiais no nome então não checa isso
+            if (texto.length > 2
+            ) {
+                cidadeValida = true;
+            } else if (texto.length > 0) {
+                cidadeValida = false;
+            } else {
+                cidadeValida = null;
+            }
+
+            escolherCor(cidade, cidadeValida);
+        }
+
+        //passa pra próxima página se as variáveis forem true
+        function cadastrar() {
+
+            //os elementos que precisam estar true
+            const nome = document.getElementById('nome');
+            const email = document.getElementById('email');
+            const senha = document.getElementById('senha');
+            const confirmarSenha = document.getElementById('confirmarSenha');
+            const cep = document.getElementById('cep');
+            const endereco = document.getElementById('endereco')
+            const estado = document.getElementById('estado');
+            const cidade = document.getElementById('cidade');
+            const dados = {
+                nome: nome.value,
+                email: email.value,
+                senha: senha.value,
+                confirmarSenha: confirmarSenha.value,
+                cep: cep.value,
+                endereco: endereco.value,
+                estado: estado.value,
+                cidade: cidade.value
+            }
+
+            if (nomeValido === true &&
+                emailValido === true &&
+                senhaValida === true &&
+                confirmarSenhaValido === true &&
+                cepValido === true &&
+                enderecoValido &&
+                estadoValido === true &&
+                cidadeValida === true
+            ) {
+                //window.location.href='Cadastrados.html'
+
+                fetch("http://localhost:3000/cadastrar_usurario", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(dados)
+                })
+                    .then(response => response.json())
+                    .then(retorno => {
+                        document.getElementById("resultado").textContent = retorno.mensagem || JSON.stringify(retorno);
+
+                        if (retorno.sucesso) {
+                            limpar();
+                        }
+                    })
+                    .catch(erro => {
+                        document.getElementById("resultado").textContent =
+                            "Erro ao conectar com o servidor.";
+                        console.error(erro);
+                    });
+
+
+                limpar();
+            }
+            console.log(dados);
+        }
+
+        //limpa tudo
+        function limpar() {
+            const nome = document.getElementById('nome');
+            const email = document.getElementById('email');
+            const senha = document.getElementById('senha');
+            const confirmarSenha = document.getElementById('confirmarSenha');
+            const cep = document.getElementById('cep');
+            const endereco = document.getElementById('endereco')
+            const estado = document.getElementById('estado');
+            const cidade = document.getElementById('cidade');
+
+            nome.value = null;
+            email.value = null;
+            senha.value = null;
+            confirmarSenha.value = null;
+            cep.value = null;
+            endereco.value = null;
+            estado.value = null;
+            cidade.value = null;
+        }
+
+    </script>
+</body>
+
+</html>

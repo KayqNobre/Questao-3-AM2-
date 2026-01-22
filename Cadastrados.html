@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>   
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrados</title>
+    
+    <style>
+        body {
+            background-color: #EBE2B9;
+        }
+        
+        /*Fonte*/
+        @font-face {
+            font-family: 'Xilosa';
+             src: url('fonts/Xilosa.woff2') format('woff2'),
+             url('fonts/Xilosa.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /*alinhando tudo*/
+        .elements {
+            width: 315px;
+            margin:0px auto;
+        }
+
+        /*retângulo preto de fundo*/
+        .rect {    
+            background-color: #000000;
+            width: 315px;
+            height: 710px;
+            border-radius: 8px;
+            border-radius: 8px;
+        }
+
+        /*moldura do perfil*/
+        .circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #EBE2B9;
+            display: flex;
+            margin-left: 20px;
+            margin-bottom: 10px;
+        } 
+
+        /* elementos na mesma linha*/
+        .perfil {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* padrão da imagem*/
+        .perfilPic {
+            object-fit: cover;
+        }
+        
+        /*Título*/
+        h1 {
+            font-family: "Xilosa";
+            color: #EBE2B9; 
+            text-align: center;
+            font-feature-settings: 'liga' off, 'clig' off;  
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 22px;
+            width: 298px;
+            height: auto;
+            padding-top: 10px;
+        }
+
+        /*Nomes de usuário*/
+        h2 {
+            font-family: "Xilosa";
+            color: #EBE2B9;
+            font-feature-settings: 'liga' off, 'clig' off; 
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 0px;
+            padding-left: 9px;
+            margin-top: 19px;
+            margin-bottom: 16px;
+        } 
+
+    </style>
+</head>
+<body>
+    <header>
+    </header>
+    <!--Tela-->
+    <div class="elements">
+        <!--Logo-->
+        <div>
+            <img src="assets/Mandacaru_Logo.png" 
+                alt="logo" 
+                style="
+                    width: 196px; 
+                    height: 153px; 
+                    display: flex;
+                    margin: 0 auto 0px auto;">
+        </div>
+        <!--Caixa-->
+        <div class="rect">
+
+            <!--Título-->
+            <div>
+                <h1>JOGADORES CADASTRADOS</h1>
+            </div>
+
+            <!--Perfil da Alidja-->
+            <div class="perfil">
+                <div class="circle">
+                    <img class="perfilPic" 
+                        src="assets/CordelCuca.png" 
+                        alt="cuca" 
+                        style="
+                            width: 90px;
+                            height: 90px;
+                            object-position: -17px -5px;">
+                </div>
+                <h2>ALIDJA RODRIGUES</h2>
+            </div>
+
+            <!--Perfil do Gustavo-->
+            <div class="perfil">
+                <div class="circle">
+                    <img class="perfilPic"
+                        src="assets/CordelCurupira-1.png" 
+                        alt="curupira"
+                        style="
+                            width: 90px;
+                            height: 90px;
+                            object-position: -30px -5px;">
+                </div>
+                <h2>GUSTAVO FONTENELE</h2>
+            </div>
+
+            <!--Perfil do Kayque-->
+            <div class="perfil">
+                <div class="circle">
+                    <img class="perfilPic"
+                        src="assets/CordelSaci.png" 
+                        alt="curupira"
+                        style="
+                            width: 90px;
+                            height: 90px;
+                            object-position: -15px -5px;">
+                </div>
+                <h2>KAYQUE NOBRE</h2>
+            </div>
+            
+            <!--Perfil da Lya-->
+            <div class="perfil">
+                <div class="circle">
+                    <img class="perfilPic"
+                        src="assets/CordelBoitata.png" 
+                        alt="curupira"
+                        style="
+                            width: 100px;
+                            height: 100px;
+                            object-position: -24px -5px;">
+                </div>
+                <h2>LYA DE SOUSA</h2>
+            </div>
+
+            <!--Perfil da Nat-->
+            <div class="perfil">
+                <div class="circle">
+                    <img class="perfilPic"
+                        src="assets/CordelMapiguari.png" 
+                        alt="curupira"
+                        style="
+                            width: 90px;
+                            height: 90px;
+                            object-position: -32px 3px;">
+                </div>
+                <h2>NATÁLIA BOTELHO</h2>
+            </div>
+            
+            <!--Perfil da Thainara-->
+            <div class="perfil">
+                <div class="circle">
+                    <img class="perfilPic"
+                        src="assets/CordelIara.png" 
+                        alt="curupira"
+                        style="
+                            width: 90px;
+                            height: 90px;
+                            object-position: -30px 3px;">
+                </div>
+                <h2>THAINARA MIRANDA</h2>
+            </div>
+            
+            
+        </div>
+    </div>
+    
+</body>
+</html>
