@@ -1,5 +1,5 @@
-# Questao-1-AM2-
-Entrega da Primeira questão da prova final de Autoração Multimídia 2
+# Questao-3-AM2-
+Entrega da Terceira questão da prova final de Autoração Multimídia 2
 ## Equipe:
 Natalia Gonzales Botelho(511830)
 
@@ -14,7 +14,10 @@ Kayque Vinícius Rodrigues Nobre(569625)
 Alidja Dafny Alves Rodrigues(556344)
 
 ## Como iniciar a página:
-Pelo Index.html
+Inicialmente, tenha o node.js instalado
+vá para a pasta server e rode o comando "npm install express"
+e após isso acesse o link
+http://localhost:3000/index.html
 ## Preenchimento dos campos:
 Nome: A partir de 3 caracteres até um máximo de 50
 
