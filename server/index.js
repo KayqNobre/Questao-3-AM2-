@@ -2,7 +2,7 @@ import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 const app = express();
-const port = 3000;
+const port = 5000;
 app.use(express.json());
 
 const __filename = fileURLToPath(import.meta.url);
