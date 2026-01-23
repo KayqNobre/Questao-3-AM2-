@@ -189,8 +189,9 @@ console.log(usuarios);
 
     return res.status(200).json({
     sucesso: true,
-    mensagem: 'Cadastro realizado com sucesso'
+    mensagem: 'Sucesso'
 });
+
 
 });
 

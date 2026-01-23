@@ -544,7 +544,7 @@
         }
 
         //passa pra próxima página se as variáveis forem true
-        function cadastrar() {
+          function cadastrar() {
 
             //os elementos que precisam estar true
             const nome = document.getElementById('nome');
@@ -555,6 +555,7 @@
             const endereco = document.getElementById('endereco')
             const estado = document.getElementById('estado');
             const cidade = document.getElementById('cidade');
+
             const dados = {
                 nome: nome.value,
                 email: email.value,
@@ -566,41 +567,33 @@
                 cidade: cidade.value
             }
 
-            if (nomeValido === true &&
-                emailValido === true &&
-                senhaValida === true &&
-                confirmarSenhaValido === true &&
-                cepValido === true &&
-                enderecoValido &&
-                estadoValido === true &&
-                cidadeValida === true
-            ) {
-                //window.location.href='Cadastrados.html'
+            //window.location.href='Cadastrados.html'
 
-                fetch("/cadastrar_usurario", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(dados)
+            fetch("/cadastrar_usurario", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(dados)
+            })
+                .then(async response => {
+                    const data = await response.json();
+
+                    if (!response.ok) {
+                        throw data;
+                    }
+
+                    return data;
                 })
-                    .then(response => response.json())
-                    .then(retorno => {
-                        document.getElementById("resultado").textContent = retorno.mensagem || JSON.stringify(retorno);
+                .then(retorno => {
+                    document.getElementById("resultado").textContent = retorno.mensagem;
+                    limpar();
+                })
+                .catch(erro => {
+                    document.getElementById("resultado").textContent =
+                        Array.isArray(erro) ? erro.join(', ') : 'Erro no cadastro';
+                });
 
-                        if (retorno.sucesso) {
-                            limpar();
-                        }
-                    })
-                    .catch(erro => {
-                        document.getElementById("resultado").textContent =
-                            "Erro ao conectar com o servidor.";
-                        console.error(erro);
-                    });
-
-
-                limpar();
-            }
             console.log(dados);
         }
 
